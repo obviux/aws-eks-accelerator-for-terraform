@@ -1,3 +1,6 @@
+//-------------------------------------
+// Helm Add-on
+//-------------------------------------
 
 module "helm_addon" {
   source            = "../helm-addon"
@@ -8,7 +11,11 @@ module "helm_addon" {
   addon_context     = var.addon_context
 }
 
-resource "aws_iam_policy" "this" {
+//------------------------------------
+// IAM Policy
+//------------------------------------
+
+resource "aws_iam_policy" "ingress_nginx_policy" {
   name        = "${var.addon_context.eks_cluster_id}-${local.service_account_name}-policy"
   path        = "/"
   description = "A generic AWS IAM policy for the ingress nginx irsa."

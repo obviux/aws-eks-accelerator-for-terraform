@@ -9,5 +9,4 @@ resource "aws_eks_addon" "kube_proxy" {
     var.addon_context.tags, local.add_on_config["tags"],
     { "eks_addon" = "kube-proxy" }
   )
-
 }

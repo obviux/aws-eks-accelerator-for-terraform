@@ -143,6 +143,16 @@ module "crossplane" {
   addon_context     = local.addon_context
 }
 
+module "external_dns" {
+  count             = var.enable_external_dns ? 1 : 0
+  source            = "./external-dns"
+  helm_config       = var.external_dns_helm_config
+  manage_via_gitops = var.argocd_manage_add_ons
+  irsa_policies     = var.external_dns_irsa_policies
+  addon_context     = local.addon_context
+  domain_name       = var.eks_cluster_domain
+}
+
 module "fargate_fluentbit" {
   count         = var.enable_fargate_fluentbit ? 1 : 0
   source        = "./fargate-fluentbit"
@@ -176,6 +186,16 @@ module "keda" {
   helm_config               = var.keda_helm_config
   irsa_policies             = var.keda_irsa_policies
   irsa_permissions_boundary = var.keda_irsa_permissions_boundary
+  manage_via_gitops         = var.argocd_manage_add_ons
+  addon_context             = local.addon_context
+}
+
+module "kubernetes_dashboard" {
+  count                     = var.enable_kubernetes_dashboard ? 1 : 0
+  source                    = "./kubernetes-dashboard"
+  helm_config               = var.kubernetes_dashboard_helm_config
+  irsa_policies             = var.kubernetes_dashboard_irsa_policies
+  irsa_permissions_boundary = var.kubernetes_dashboard_irsa_permissions_boundary
   manage_via_gitops         = var.argocd_manage_add_ons
   addon_context             = local.addon_context
 }
@@ -229,16 +249,6 @@ module "yunikorn" {
   helm_config               = var.yunikorn_helm_config
   irsa_policies             = var.yunikorn_irsa_policies
   irsa_permissions_boundary = var.yunikorn_irsa_permissions_boundary
-  manage_via_gitops         = var.argocd_manage_add_ons
-  addon_context             = local.addon_context
-}
-
-module "kubernetes_dashboard" {
-  count                     = var.enable_kubernetes_dashboard ? 1 : 0
-  source                    = "./kubernetes-dashboard"
-  helm_config               = var.kubernetes_dashboard_helm_config
-  irsa_policies             = var.kubernetes_dashboard_irsa_policies
-  irsa_permissions_boundary = var.kubernetes_dashboard_irsa_permissions_boundary
   manage_via_gitops         = var.argocd_manage_add_ons
   addon_context             = local.addon_context
 }

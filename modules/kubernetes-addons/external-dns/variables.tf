@@ -1,7 +1,18 @@
 variable "helm_config" {
   type        = any
   default     = {}
-  description = "Ingress NGINX Helm Configuration"
+  description = "External DNS Helm Configuration"
+}
+
+variable "irsa_policies" {
+  type        = list(string)
+  description = "Additional IAM policies used for the add-on service account."
+}
+
+variable "iam_role_path" {
+  type        = string
+  default     = "/"
+  description = "IAM role path"
 }
 
 variable "manage_via_gitops" {
@@ -10,22 +21,15 @@ variable "manage_via_gitops" {
   description = "Determines if the add-on should be managed via GitOps."
 }
 
-variable "tags" {
-  type        = map(string)
-  description = "Common Tags for AWS resources"
-  default     = null
-}
-
-variable "irsa_policies" {
-  type        = list(string)
-  description = "Additional IAM policies for a IAM role for service accounts"
-  default     = []
-}
-
 variable "irsa_iam_permissions_boundary" {
   type        = string
   default     = ""
   description = "IAM Policy ARN for IRSA IAM role permissions boundary"
+}
+
+variable "domain_name" {
+  type        = string
+  description = "Domain name of the Route53 hosted zone to use with External DNS."
 }
 
 variable "addon_context" {
