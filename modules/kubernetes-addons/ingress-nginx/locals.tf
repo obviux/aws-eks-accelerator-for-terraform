@@ -3,13 +3,13 @@ locals {
   service_account_name = "${local.name}-sa"
 
   default_helm_config = {
-    name             = local.name
-    chart            = local.name
-    repository       = "https://kubernetes.github.io/ingress-nginx"
-    version          = "4.0.17"
-    namespace        = local.name
-    values           = local.default_helm_values
-    description      = "The NGINX HelmChart Ingress Controller deployment configuration"
+    name        = local.name
+    chart       = local.name
+    repository  = "https://kubernetes.github.io/ingress-nginx"
+    version     = "4.0.17"
+    namespace   = local.name
+    values      = local.default_helm_values
+    description = "The NGINX HelmChart Ingress Controller deployment configuration"
   }
 
   default_helm_values = [templatefile("${path.module}/values.yaml", {
