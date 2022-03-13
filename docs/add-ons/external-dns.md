@@ -6,13 +6,13 @@ For complete project documentation, please visit the [External DNS Github reposi
 
 ## Usage
 
-ExternalDNS can be deployed by enabling the add-on via the following.
+External DNS can be deployed by enabling the add-on via the following.
 
 ```hcl
 enable_external_dns = true
 ```
 
-External DSN can optionally leverage the `eks_cluster_domain` global property of the `kubernetes_addon` submodule. The value for this property should be a Route53 domain that you own. ExternalDNS will leverage the value supplied for its `zoneIdFilters` property, which will restrict ExternalDNS to only create records for this domain. See docs [here](https://github.com/bitnami/charts/tree/master/bitnami/external-dns).
+External DNS can optionally leverage the `eks_cluster_domain` global property of the `kubernetes_addon` submodule. The value for this property should be a Route53 domain that you own. ExternalDNS will leverage the value supplied for its `zoneIdFilters` property, which will restrict ExternalDNS to only create records for this domain. See docs [here](https://github.com/bitnami/charts/tree/master/bitnami/external-dns).
 
 ```
 eks_cluster_domain = <cluster_domain>
