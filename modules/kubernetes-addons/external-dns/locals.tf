@@ -13,13 +13,13 @@ locals {
     values      = local.default_helm_values
   }
 
-	default_helm_values = [templatefile("${path.module}/values.yaml", {
+  default_helm_values = [templatefile("${path.module}/values.yaml", {
     aws_region           = var.addon_context.aws_region_name
     service_account_name = local.service_account_name
-		zone_filter_ids      = local.zone_filter_ids
+    zone_filter_ids      = local.zone_filter_ids
   })]
 
-	helm_config = merge(
+  helm_config = merge(
     local.default_helm_config,
     var.helm_config
   )

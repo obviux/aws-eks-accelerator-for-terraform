@@ -1,8 +1,3 @@
-output "service_account_name" {
-  description = "Service account name for the add-on"
-  value       = local.service_account_name
-}
-
 output "zone_filter_ids" {
   description = "Zone Filter Ids for the add-on"
   value       = local.zone_filter_ids

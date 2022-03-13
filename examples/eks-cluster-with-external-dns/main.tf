@@ -65,7 +65,7 @@ provider "helm" {
 }
 
 locals {
-  tenant      = "aws1010" # AWS account name or unique id for tenant
+  tenant      = "aws01" # AWS account name or unique id for tenant
   environment = "preprod" # Environment area eg., preprod or prod
   zone        = "dev"     # Environment with in one sub_tenant or business unit
 
