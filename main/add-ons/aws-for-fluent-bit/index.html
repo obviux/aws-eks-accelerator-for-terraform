@@ -547,6 +547,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#externally-created-cloudwatch-log-groups" class="md-nav__link">
+    Externally-Created CloudWatch Log Group(s)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -637,8 +644,50 @@
   
   
     <li class="md-nav__item">
+      <a href="../cert-manager-csi-driver/" class="md-nav__link">
+        cert-manager-csi-driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cert-manager/" class="md-nav__link">
         cert-manager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chaos-mesh/" class="md-nav__link">
+        Chaos Mesh
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cilium/" class="md-nav__link">
+        Cilium
       </a>
     </li>
   
@@ -737,6 +786,20 @@
     <li class="md-nav__item">
       <a href="../fargate-fluent-bit/" class="md-nav__link">
         Fargate fluent bit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gatekeeper/" class="md-nav__link">
+        Gatekeeper
       </a>
     </li>
   
@@ -861,6 +924,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../local-volume-provisioner/" class="md-nav__link">
+        Local volume provisioner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../managed-add-ons/" class="md-nav__link">
         Amazon EKS Add-ons
       </a>
@@ -933,6 +1010,20 @@
     <li class="md-nav__item">
       <a href="../secrets-store-csi-driver/" class="md-nav__link">
         secrets-store-csi-driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smb-csi-driver/" class="md-nav__link">
+        SMB CSI Driver Helm Chart
       </a>
     </li>
   
@@ -1238,6 +1329,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#externally-created-cloudwatch-log-groups" class="md-nav__link">
+    Externally-Created CloudWatch Log Group(s)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1301,6 +1399,16 @@ See this <a href="https://github.com/aws/eks-charts/tree/master/stable/aws-for-f
   enable       = true
   logGroupName = &quot;&lt;log_group_name&gt;&quot;
 }
+</code></pre></div>
+<h3 id="externally-created-cloudwatch-log-groups">Externally-Created CloudWatch Log Group(s)<a class="headerlink" href="#externally-created-cloudwatch-log-groups" title="Permanent link">&para;</a></h3>
+<p>If the CloudWatch log group FluentBit puts logs to is required to be encrypted by an existing KMS
+customer-managed key, then the CloudWatch log group needs to be created external to the
+kubernetes-addons module and passed in. Creating the CloudWatch log group externally is also useful
+if FluentBit is putting logs to multiple log groups because all the log groups can be created in
+the same code file. To do this, set the create log group flag to false and supply the
+previously-created log group name.</p>
+<div class="highlight"><pre><span></span><code>aws_for_fluentbit_create_cw_log_group = false
+aws_for_fluentbit_cw_log_group_name   = aws_cloudwatch_log_group.application.name
 </code></pre></div>
 
               
