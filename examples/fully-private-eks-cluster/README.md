@@ -8,7 +8,7 @@ This example deploys a fully private EKS Cluster into a new VPC using Cloud9 run
  - Creates EKS Cluster Control plane with a private endpoint and with one Managed node group.
  - Deploys Amazon EKS add-ons to the EKS cluster.
 
-Please see this [document](https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html) for more details on configuring fully private EKS Clusters
+Please see this [document](https://docs.awsq.amazon.com/eks/latest/userguide/private-clusters.html) for more details on configuring fully private EKS Clusters
 
 Here is the high level design of the solution. The solution has been split into 3 different Terraform stacks for simplicity.
 1. VPC
