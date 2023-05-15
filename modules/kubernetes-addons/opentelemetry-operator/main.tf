@@ -265,6 +265,26 @@ resource "kubernetes_cluster_role_v1" "adot" {
     resources  = ["subjectaccessreviews"]
     verbs      = ["create"]
   }
+  rule {
+    api_groups = ["networking.k8s.io"]
+    resources  = ["ingresses"]
+    verbs      = ["create", "delete", "get", "list", "patch", "update", "watch"]
+  }
+  rule {
+    api_groups = [""]
+    resources  = ["endpoints"]
+    verbs      = ["get"]
+  }
+  rule {
+    api_groups = [""]
+    resources  = ["nodes/proxy"]
+    verbs      = ["get", "list", "watch"]
+  }
+  rule {
+    api_groups = ["extensions"]
+    resources  = ["ingresses"]
+    verbs      = ["get"]
+  }
 }
 
 resource "kubernetes_cluster_role_binding_v1" "adot" {
@@ -292,7 +312,6 @@ module "helm_addon" {
   count  = var.enable_opentelemetry_operator ? 1 : 0
 
   helm_config   = local.helm_config
-  irsa_config   = null
   addon_context = var.addon_context
 
   depends_on = [module.cert_manager]
