@@ -10,25 +10,27 @@
         <meta name="author" content="AWS">
       
       
-        <link rel="canonical" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/">
+        <link rel="canonical" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/blueprints/karpenter/">
       
       
+        <link rel="prev" href="../istio/">
       
-        <link rel="next" href="getting-started/">
       
-      <link rel="icon" href="images/colored-logo.png">
+        <link rel="next" href="../multi-tenancy-with-teams/">
+      
+      <link rel="icon" href="../../images/colored-logo.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.19">
     
     
       
-        <title>Amazon EKS Blueprints for Terraform</title>
+        <title>Karpenter - Amazon EKS Blueprints for Terraform</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.eebd395e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
   
@@ -85,7 +87,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -110,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#amazon-eks-blueprints-for-terraform" class="md-skip">
+        <a href="#karpenter" class="md-skip">
           Skip to content
         </a>
       
@@ -130,9 +132,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Amazon EKS Blueprints for Terraform" class="md-header__button md-logo" aria-label="Amazon EKS Blueprints for Terraform" data-md-component="logo">
+    <a href="../.." title="Amazon EKS Blueprints for Terraform" class="md-header__button md-logo" aria-label="Amazon EKS Blueprints for Terraform" data-md-component="logo">
       
-  <img src="images/white-logo.png" alt="logo">
+  <img src="../../images/white-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -148,7 +150,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Karpenter
             
           </span>
         </div>
@@ -229,9 +231,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Amazon EKS Blueprints for Terraform" class="md-nav__button md-logo" aria-label="Amazon EKS Blueprints for Terraform" data-md-component="logo">
+    <a href="../.." title="Amazon EKS Blueprints for Terraform" class="md-nav__button md-logo" aria-label="Amazon EKS Blueprints for Terraform" data-md-component="logo">
       
-  <img src="images/white-logo.png" alt="logo">
+  <img src="../../images/white-logo.png" alt="logo">
 
     </a>
     Amazon EKS Blueprints for Terraform
@@ -257,6 +259,233 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Blueprints
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Blueprints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agones-game-controller/" class="md-nav__link">
+        Agones Game Controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appmesh-mtls/" class="md-nav__link">
+        AWS AppMesh mTLS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../argocd/" class="md-nav__link">
+        ArgoCD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blue-green-upgrade/" class="md-nav__link">
+        Blue/Green Migration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../elastic-fabric-adapter/" class="md-nav__link">
+        Elastic Fabric Adapter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../external-secrets/" class="md-nav__link">
+        External Secrets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fargate-serverless/" class="md-nav__link">
+        Fargate Serverless
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fully-private-cluster/" class="md-nav__link">
+        Fully Private Cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipv4-prefix-delegation/" class="md-nav__link">
+        IPv4 Prefix Delegation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ipv6-eks-cluster/" class="md-nav__link">
+        IPv6 Networking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../istio-multi-primary/" class="md-nav__link">
+        Istio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../istio/" class="md-nav__link">
+        Istio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -269,12 +498,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Overview
+          Karpenter
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
-        Overview
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Karpenter
       </a>
       
         
@@ -293,63 +522,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    Motivation
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites:
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
-    Core Concepts
-  </a>
-  
-    <nav class="md-nav" aria-label="Core Concepts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster" class="md-nav__link">
-    Cluster
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-on" class="md-nav__link">
-    Add-on
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#team" class="md-nav__link">
-    Team
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#support-feedback" class="md-nav__link">
-    Support &amp; Feedback
+  <a href="#deploy" class="md-nav__link">
+    Deploy
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    Security
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    License
+  <a href="#destroy" class="md-nav__link">
+    Destroy
   </a>
   
 </li>
@@ -361,63 +549,6 @@
     </li>
   
 
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="getting-started/" class="md-nav__link">
-        Getting Started
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-          Blueprints
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Blueprints
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/agones-game-controller/" class="md-nav__link">
-        Agones Game Controller
-      </a>
-    </li>
-  
-
             
           
             
@@ -426,175 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blueprints/appmesh-mtls/" class="md-nav__link">
-        AWS AppMesh mTLS
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/argocd/" class="md-nav__link">
-        ArgoCD
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/blue-green-upgrade/" class="md-nav__link">
-        Blue/Green Migration
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/elastic-fabric-adapter/" class="md-nav__link">
-        Elastic Fabric Adapter
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/external-secrets/" class="md-nav__link">
-        External Secrets
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/fargate-serverless/" class="md-nav__link">
-        Fargate Serverless
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/fully-private-cluster/" class="md-nav__link">
-        Fully Private Cluster
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/ipv4-prefix-delegation/" class="md-nav__link">
-        IPv4 Prefix Delegation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/ipv6-eks-cluster/" class="md-nav__link">
-        IPv6 Networking
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/istio-multi-primary/" class="md-nav__link">
-        Istio
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/istio/" class="md-nav__link">
-        Istio
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/karpenter/" class="md-nav__link">
-        Karpenter
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="blueprints/multi-tenancy-with-teams/" class="md-nav__link">
+      <a href="../multi-tenancy-with-teams/" class="md-nav__link">
         Multi-Tenancy w/ Teams
       </a>
     </li>
@@ -608,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blueprints/private-public-ingress/" class="md-nav__link">
+      <a href="../private-public-ingress/" class="md-nav__link">
         Private and Public Ingress
       </a>
     </li>
@@ -622,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blueprints/privatelink-access/" class="md-nav__link">
+      <a href="../privatelink-access/" class="md-nav__link">
         PrivateLink Access
       </a>
     </li>
@@ -636,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blueprints/stateful/" class="md-nav__link">
+      <a href="../stateful/" class="md-nav__link">
         Stateful
       </a>
     </li>
@@ -650,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blueprints/tls-with-aws-pca-issuer/" class="md-nav__link">
+      <a href="../tls-with-aws-pca-issuer/" class="md-nav__link">
         TLS w/ AWS PCA Issuer
       </a>
     </li>
@@ -664,7 +627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blueprints/vpc-cni-custom-networking/" class="md-nav__link">
+      <a href="../vpc-cni-custom-networking/" class="md-nav__link">
         VPC CNI Custom Networking
       </a>
     </li>
@@ -678,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blueprints/wireguard-with-cilium/" class="md-nav__link">
+      <a href="../wireguard-with-cilium/" class="md-nav__link">
         Wireguard /w Cilium
       </a>
     </li>
@@ -727,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="iam/minimum-iam-policy/" class="md-nav__link">
+      <a href="../../iam/minimum-iam-policy/" class="md-nav__link">
         Minimum IAM policy
       </a>
     </li>
@@ -776,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="v4-to-v5/motivation/" class="md-nav__link">
+      <a href="../../v4-to-v5/motivation/" class="md-nav__link">
         Motivation
       </a>
     </li>
@@ -790,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="v4-to-v5/cluster/" class="md-nav__link">
+      <a href="../../v4-to-v5/cluster/" class="md-nav__link">
         Cluster
       </a>
     </li>
@@ -804,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="v4-to-v5/addons/" class="md-nav__link">
+      <a href="../../v4-to-v5/addons/" class="md-nav__link">
         Addons
       </a>
     </li>
@@ -818,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="v4-to-v5/teams/" class="md-nav__link">
+      <a href="../../v4-to-v5/teams/" class="md-nav__link">
         Teams
       </a>
     </li>
@@ -840,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -874,63 +837,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#motivation" class="md-nav__link">
-    Motivation
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites:
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
-    Core Concepts
-  </a>
-  
-    <nav class="md-nav" aria-label="Core Concepts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cluster" class="md-nav__link">
-    Cluster
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-on" class="md-nav__link">
-    Add-on
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#team" class="md-nav__link">
-    Team
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#support-feedback" class="md-nav__link">
-    Support &amp; Feedback
+  <a href="#deploy" class="md-nav__link">
+    Deploy
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    Security
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    License
+  <a href="#destroy" class="md-nav__link">
+    Destroy
   </a>
   
 </li>
@@ -953,53 +875,39 @@
   
 
 
-<!-- BEGIN INCLUDE ../README.md -->
-<h1 id="amazon-eks-blueprints-for-terraform">Amazon EKS Blueprints for Terraform<a class="headerlink" href="#amazon-eks-blueprints-for-terraform" title="Permanent link">&para;</a></h1>
-<p>Welcome to Amazon EKS Blueprints for Terraform!</p>
-<p>This project contains a collection of Amazon EKS cluster patterns implemented in Terraform that demonstrate how fast and easy it is for customers to adopt <a href="https://aws.amazon.com/eks/">Amazon EKS</a>. The patterns can be used by AWS customers, partners, and internal AWS teams to configure and manage complete EKS clusters that are fully bootstrapped with the operational software that is needed to deploy and operate workloads.</p>
-<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
-<p>Kubernetes is a powerful and extensible container orchestration technology that allows you to deploy and manage containerized applications at scale. The extensible nature of Kubernetes also allows you to use a wide range of popular open-source tools, commonly referred to as add-ons, in Kubernetes clusters. With such a large number of tooling and design choices available however, building a tailored EKS cluster that meets your application’s specific needs can take a significant amount of time. It involves integrating a wide range of open-source tools and AWS services and requires deep expertise in AWS and Kubernetes.</p>
-<p>AWS customers have asked for examples that demonstrate how to integrate the landscape of Kubernetes tools and make it easy for them to provision complete, opinionated EKS clusters that meet specific application requirements. Customers can use EKS Blueprints to configure and deploy purpose built EKS clusters, and start onboarding workloads in days, rather than months.</p>
-<h2 id="core-concepts">Core Concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
-<p>This document provides a high level overview of the Core Concepts that are embedded in EKS Blueprints. For the purposes of this document, we will assume the reader is familiar with Git, Docker, Kubernetes and AWS.</p>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="..#cluster">Cluster</a></td>
-<td>An Amazon EKS Cluster and associated worker groups.</td>
-</tr>
-<tr>
-<td><a href="..#add-on">Add-on</a></td>
-<td>Operational software that provides key functionality to support your Kubernetes applications.</td>
-</tr>
-<tr>
-<td><a href="..#team">Team</a></td>
-<td>A logical grouping of IAM identities that have access to Kubernetes resources.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="cluster">Cluster<a class="headerlink" href="#cluster" title="Permanent link">&para;</a></h3>
-<p>A <code>cluster</code> is simply an EKS cluster. EKS Blueprints provides for customizing the compute options you leverage with your <code>clusters</code>. The framework currently supports <code>EC2</code>, <code>Fargate</code> and <code>BottleRocket</code> instances. It also supports managed and self-managed node groups.</p>
-<p>We rely on <a href="https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest"><code>terraform-aws-modules/eks/aws</code></a> to configure <code>clusters</code>. See our <a href="../getting-started.md">examples</a> to see how <code>terraform-aws-modules/eks/aws</code> is configured for EKS Blueprints.</p>
-<h3 id="add-on">Add-on<a class="headerlink" href="#add-on" title="Permanent link">&para;</a></h3>
-<p><code>Add-ons</code> allow you to configure the operational tools that you would like to deploy into your EKS cluster. When you configure <code>add-ons</code> for a <code>cluster</code>, the <code>add-ons</code> will be provisioned at deploy time by leveraging the Terraform Helm provider. Add-ons can deploy both Kubernetes specific resources and AWS resources needed to support add-on functionality.</p>
-<p>For example, the <code>metrics-server</code> add-on only deploys the Kubernetes manifests that are needed to run the Kubernetes Metrics Server. By contrast, the <code>aws-load-balancer-controller</code> add-on deploys both Kubernetes YAML, in addition to creating resources via AWS APIs that are needed to support the AWS Load Balancer Controller functionality.</p>
-<p>EKS Blueprints allows you to manage your add-ons directly via Terraform (by leveraging the Terraform Helm provider) or via GitOps with ArgoCD. See our <a href="https://aws-ia.github.io/terraform-aws-eks-blueprints-addons/main/"><code>Add-ons</code></a> documentation page for detailed information.</p>
-<h3 id="team">Team<a class="headerlink" href="#team" title="Permanent link">&para;</a></h3>
-<p><code>Teams</code> allow you to configure the logical grouping of users that have access to your EKS clusters, in addition to the access permissions they are granted.</p>
-<p>See our <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints-teams"><code>Teams</code></a> documentation page for detailed information.</p>
-<h2 id="support-feedback">Support &amp; Feedback<a class="headerlink" href="#support-feedback" title="Permanent link">&para;</a></h2>
-<p>EKS Blueprints for Terraform is maintained by AWS Solution Architects. It is not part of an AWS service and support is provided best-effort by the EKS Blueprints community. To post feedback, submit feature ideas, or report bugs, please use the <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/issues">Issues section</a> of this GitHub repo. If you are interested in contributing to EKS Blueprints, see the <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/CONTRIBUTING.md">Contribution guide</a>.</p>
-<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
-<p>See <a href="../CONTRIBUTING.md#security-issue-notifications">CONTRIBUTING</a> for more information.</p>
-<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
-<p>Apache-2.0 Licensed. See <a href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/LICENSE">LICENSE</a>.</p>
+<!-- BEGIN INCLUDE ../../examples/karpenter/README.md -->
+<h1 id="karpenter">Karpenter<a class="headerlink" href="#karpenter" title="Permanent link">&para;</a></h1>
+<p>This example demonstrates how to provision a Karpenter on a serverless cluster (serverless data plane) using Fargate Profiles.</p>
+<p>This example solution provides:</p>
+<ul>
+<li>Amazon EKS Cluster (control plane)</li>
+<li>Amazon EKS Fargate Profiles for the <code>kube-system</code> namespace which is used by the <code>coredns</code>, <code>vpc-cni</code>, and <code>kube-proxy</code> addons, as well as profile that will match on the <code>karpenter</code> namespace which will be used by Karpenter.</li>
+<li>Amazon EKS managed addons <code>coredns</code>, <code>vpc-cni</code> and <code>kube-proxy</code>
+    <code>coredns</code> has been patched to run on Fargate, and <code>vpc-cni</code> has been configured to use prefix delegation to better support the max pods setting of 110 on the Karpenter provisioner</li>
+<li>A sample deployment is provided to demonstrates scaling a deployment to view how Karpenter responds to provision, and de-provision, resources on-demand</li>
+</ul>
+<h2 id="prerequisites">Prerequisites:<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Ensure that you have the following tools installed locally:</p>
+<ol>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">aws cli</a></li>
+<li><a href="https://Kubernetes.io/docs/tasks/tools/">kubectl</a></li>
+<li><a href="https://learn.hashicorp.com/tutorials/terraform/install-cli">terraform</a></li>
+</ol>
+<h2 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h2>
+<p>To provision this example:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>terraform<span class="w"> </span>init
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-target<span class="w"> </span>module.vpc
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-target<span class="w"> </span>module.eks
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>terraform<span class="w"> </span>apply
+</span></code></pre></div>
+<p>Enter <code>yes</code> at command prompt to apply</p>
+<h2 id="destroy">Destroy<a class="headerlink" href="#destroy" title="Permanent link">&para;</a></h2>
+<p>To teardown and remove the resources created in this example:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>kubectl<span class="w"> </span>delete<span class="w"> </span>deployment<span class="w"> </span>inflate
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.eks_blueprints_addons&quot;</span><span class="w"> </span>-auto-approve
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.eks&quot;</span><span class="w"> </span>-auto-approve
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>terraform<span class="w"> </span>destroy<span class="w"> </span>-auto-approve
+</span></code></pre></div>
 <!-- END INCLUDE -->
 
 
@@ -1042,10 +950,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs.sticky"], "search": "assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   </body>
