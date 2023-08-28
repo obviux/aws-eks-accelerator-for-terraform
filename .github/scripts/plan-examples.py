@@ -10,8 +10,11 @@ def get_examples():
     """
     exclude = {
         'examples/appmesh-mtls',  # excluded until Rout53 is setup
-        'examples/blue-green-upgrade/core-infra',
-        'examples/blue-green-upgrade/modules/eks_cluster'
+        'examples/blue-green-upgrade/environment',
+        'examples/blue-green-upgrade/modules/eks_cluster',
+        'examples/istio-multi-cluster/1.cluster1', # relies on remote state
+        'examples/istio-multi-cluster/2.cluster2', # relies on remote state
+        'examples/privatelink-access',
     }
 
     projects = {

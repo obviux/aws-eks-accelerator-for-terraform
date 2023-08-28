@@ -44,17 +44,16 @@ locals {
   }
 }
 
-#---------------------------------------------------------------
-# EKS Blueprints
-#---------------------------------------------------------------
+################################################################################
+# Cluster
+################################################################################
 
-#tfsec:ignore:aws-eks-enable-control-plane-logging
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "~> 19.12"
+  version = "~> 19.16"
 
   cluster_name                   = local.name
-  cluster_version                = "1.25"
+  cluster_version                = "1.27"
   cluster_endpoint_public_access = true
 
   vpc_id     = module.vpc.vpc_id
@@ -79,9 +78,13 @@ module "eks" {
   tags = local.tags
 }
 
+################################################################################
+# EKS Blueprints Teams
+################################################################################
+
 module "eks_blueprints_admin_team" {
   source  = "aws-ia/eks-blueprints-teams/aws"
-  version = "~> 0.2"
+  version = "~> 1.0"
 
   name = "admin-team"
 
@@ -94,7 +97,7 @@ module "eks_blueprints_admin_team" {
 
 module "eks_blueprints_dev_teams" {
   source  = "aws-ia/eks-blueprints-teams/aws"
-  version = "~> 0.2"
+  version = "~> 1.0"
 
   for_each = {
     red = {
@@ -122,10 +125,10 @@ module "eks_blueprints_dev_teams" {
   }
 
   namespaces = {
-    "blue-${each.key}" = {
+    "team-${each.key}" = {
       labels = {
-        appName     = "blue-team-app",
-        projectName = "project-blue",
+        appName     = "${each.key}-team-app",
+        projectName = "project-${each.key}",
       }
 
       resource_quota = {
@@ -170,13 +173,13 @@ module "eks_blueprints_dev_teams" {
   tags = local.tags
 }
 
-#---------------------------------------------------------------
-# Supporting Resources
-#---------------------------------------------------------------'
+################################################################################
+# Supporting Resoruces
+################################################################################
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 4.0"
+  version = "~> 5.0"
 
   name = local.name
   cidr = local.vpc_cidr
