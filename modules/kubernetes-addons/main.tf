@@ -388,13 +388,6 @@ module "kube_prometheus_stack" {
   addon_context     = local.addon_context
 }
 
-module "portworx" {
-  count         = var.enable_portworx ? 1 : 0
-  source        = "portworx/portworx-addon/eksblueprints"
-  version       = "0.0.6"
-  helm_config   = var.portworx_helm_config
-  addon_context = local.addon_context
-}
 module "prometheus" {
   count       = var.enable_prometheus ? 1 : 0
   source      = "./prometheus"
@@ -438,15 +431,6 @@ module "strimzi_kafka_operator" {
   helm_config       = var.strimzi_kafka_operator_helm_config
   manage_via_gitops = var.argocd_manage_add_ons
   addon_context     = local.addon_context
-}
-
-module "sysdig_agent" {
-  source  = "sysdiglabs/sysdig-addon/eksblueprints"
-  version = "0.0.3"
-
-  count         = var.enable_sysdig_agent ? 1 : 0
-  helm_config   = var.sysdig_agent_helm_config
-  addon_context = local.addon_context
 }
 
 module "tetrate_istio" {

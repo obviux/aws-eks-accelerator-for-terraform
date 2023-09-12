@@ -442,19 +442,6 @@ variable "kube_state_metrics_helm_config" {
   default     = {}
 }
 
-#-----------SYSDIG-------------
-variable "enable_sysdig_agent" {
-  description = "Enable Sysdig Agent add-on"
-  type        = bool
-  default     = false
-}
-
-variable "sysdig_agent_helm_config" {
-  description = "Sysdig Helm Chart config"
-  type        = any
-  default     = {}
-}
-
 #-----------TETRATE ISTIO-------------
 variable "enable_tetrate_istio" {
   description = "Enable Tetrate Istio add-on"
@@ -1410,19 +1397,6 @@ variable "gatekeeper_helm_config" {
   description = "Gatekeeper Helm Chart config"
   type        = any
   default     = {}
-}
-
-#-----------Kubernetes Portworx ADDON-------------
-variable "enable_portworx" {
-  description = "Enable Kubernetes Dashboard add-on"
-  type        = bool
-  default     = false
-}
-
-variable "portworx_helm_config" {
-  description = "Kubernetes Portworx Helm Chart config"
-  type        = any
-  default     = null
 }
 
 #-----------Local volume provisioner ADDON-------------
